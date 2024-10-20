@@ -1,5 +1,5 @@
 // miniprogram/utils/api.js
-const BASE_URL = 'https://your-backend-domain.com/api';
+const BASE_URL = 'https://tabiyaku-124680-8-1330406997.sh.run.tcloudbase.com/api'; // 替换为您的后端域名
 
 const request = (url, method, data = {}, headers = {}) => {
   return new Promise((resolve, reject) => {
@@ -35,15 +35,20 @@ const api = {
         filePath: imageData,
         name: 'image',
         header: {
-          'Authorization': `Bearer ${getApp().globalData.accessToken}`
+          'Authorization': `Bearer ${getApp().globalData.accessToken}` // 确保使用反引号
         },
         formData: {},
         success(res) {
-          const data = JSON.parse(res.data);
-          if (res.statusCode >= 200 && res.statusCode < 300) {
-            resolve(data);
-          } else {
-            reject(data);
+          try {
+            const data = JSON.parse(res.data);
+            if (res.statusCode >= 200 && res.statusCode < 300) {
+              resolve(data);
+            } else {
+              reject(data);
+            }
+          } catch (e) {
+            // 解析失败时，显示原始响应内容
+            reject({ message: '解析响应失败', rawData: res.data });
           }
         },
         fail(error) {
@@ -54,7 +59,7 @@ const api = {
   },
   getRecords: () => {
     return request('/records', 'GET', {}, {
-      'Authorization': `Bearer ${getApp().globalData.accessToken}`
+      'Authorization': `Bearer ${getApp().globalData.accessToken}` // 确保使用反引号
     });
   }
 };
