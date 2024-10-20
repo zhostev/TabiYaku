@@ -1,0 +1,14 @@
+<!-- miniprogram/pages/records/records.wxml -->
+<view class="container">
+  <view class="title">我的翻译记录</view>
+  <button bindtap="fetchRecords" class="button">刷新记录</button>
+  <view wx:if="{{records.length === 0}}">
+    <text>暂无记录。</text>
+  </view>
+  <view wx:for="{{records}}" wx:key="id" class="record-item">
+    <view><text>记录ID: </text><text>{{item.id}}</text></view>
+    <view><text>翻译内容: </text><text>{{item.chinese_translation}}</text></view>
+    <view><text>创建时间: </text><text>{{formatDate(item.created_at)}}</text></view>
+  </view>
+  <view class="error-message">{{errorMessage}}</view>
+</view>

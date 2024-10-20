@@ -1,0 +1,11 @@
+<!-- miniprogram/pages/register/register.wxml -->
+<view class="container">
+  <view class="title">TabiYaku 注册</view>
+  <form bindsubmit="onSubmit">
+    <input name="username" placeholder="用户名" required />
+    <input name="password" type="password" placeholder="密码" required />
+    <button formType="submit" class="button">注册</button>
+  </form>
+  <view class="error-message">{{errorMessage}}</view>
+  <button bindtap="goToLogin" class="button">已有账户？登录</button>
+</view>

@@ -1,0 +1,13 @@
+<!-- miniprogram/pages/upload/upload.wxml -->
+<view class="container">
+  <view class="title">上传图片进行翻译</view>
+  <button bindtap="chooseImage" class="button">选择图片</button>
+  <image src="{{imageSrc}}" mode="aspectFit" wx:if="{{imageSrc}}" /> 
+  <button bindtap="uploadImage" class="button" wx:if="{{imageSrc}}">上传并翻译</button>
+  <view class="success-message">{{successMessage}}</view>
+  <view class="error-message">{{errorMessage}}</view>
+  <view class="translation-result" wx:if="{{translationResult}}">
+    <text>翻译结果:</text>
+    <text>{{translationResult}}</text>
+  </view>
+</view>

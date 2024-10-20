@@ -1,0 +1,15 @@
+// miniprogram/app.json
+{
+    "pages": [
+      "pages/login/login",
+      "pages/register/register",
+      "pages/upload/upload",
+      "pages/records/records"
+    ],
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#ffffff",
+      "navigationBarTitleText": "TabiYaku",
+      "navigationBarTextStyle": "black"
+    }
+  }

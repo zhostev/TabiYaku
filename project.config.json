@@ -1,0 +1,15 @@
+{
+  "miniprogramRoot": "miniprogram/",
+  "projectname": "TabiYaku",
+  "description": "翻译日语菜单图片内容的微信小程序",
+  "appid": "your-wechat-mini-program-appid",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true
+  },
+  "compileType": "miniprogram"
+}
